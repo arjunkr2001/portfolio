@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+body{
+    height: 100vh;
+    background-image: url('./img/bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+/* nav{
+    display: none;
+} */
+.profile{
+    position: fixed;
+    z-index: 5;
+    /* background-color: aquamarine; */
+    height: 100vh;
+    width: 50vw;
+    top: 100%;
+    transition: 1s;
+    /* opacity: 0.9; */
+    background: rgba(127, 255, 212, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile img{
+    width: 50%;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 5px solid white;
+    border-style: dashed;
+    transition: 1s;
+}
+.profile img:hover{
+    border-radius: 40%;
+}
+.nav-links{
+    position: fixed;
+    z-index: 5;
+    background-color: blueviolet;
+    height: 100vh;
+    width: 50vw;
+    transform: translateX(100%);
+    top: -100%;
+    transition: 1s;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+}
+.nav-links li{
+    padding: 10px;
+    margin: 1em;
+    width: 40%;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 1px;
+    transition: 1s;
+}
+.nav-links li:hover{
+    background-color: hsla(180, 100%, 50%, 0.5);
+    border-style: dashed;
+}
+main{
+    height: 100%;
+    color: white;
+    background: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0) 30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4rem;
+    padding-bottom: 10rem;
+    line-height: 3em;
+}
+.main-content{
+    font-weight: 900;
+    font-size: 1.5em;
+    /* text-stroke: 0.5px black; */
+    -webkit-text-stroke: 0.5px black;
+}
+.menu-btn{
+    z-index: 10;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+    border-style: dashed;
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+    transition: 1s;
+}
+.btn-line{
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 5px;
+    transition: 1s;
+}
+.menu-btn:hover{
+    border-radius: 1px;
+}
+
+.ball{
+    position: fixed;
+    z-index: 10;
+    top: 1rem;
+    left: 1rem;
+    height: 1rem;
+    width: 1rem;
+    transform: translate(-50%,-50%);
+    background: white;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: 3s ease;
+    pointer-events: none;
+}
+
+.menu-btn-clicked .btn-line:nth-child(1){
+    transform: translate(0,10px) rotate(45deg);
+}
+.menu-btn-clicked .btn-line:nth-child(2){
+    transform: translateX(20px);
+    width: 0;
+    opacity: 0;
+}
+.menu-btn-clicked .btn-line:nth-child(3){
+    transform: translate(0,-10px) rotate(-45deg);
+}
+
+.about-page{
+    display: none;
+    opacity: 0;
+    padding: 20%;
+    background-color: cornflowerblue;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    transition: 1s;
+}
+.projects-page{
+    display: none;
+    opacity: 0;
+    padding: 20%;
+    background-color:darksalmon;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    transition: 1s;
+}
+.contact-page{
+    display: none;
+    opacity: 0;
+    padding: 20%;
+    background-color:aquamarine;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    transition: 1s;
+}
+
+
+/* Mobile */
+@media (max-width: 500px) {
+    .main-content{
+        padding-top: 100%;
+        line-height: normal;
+    }
+    .main-content h1{
+        padding-bottom: .5em;
+        
+    }
+    main{
+        background: linear-gradient(rgba(0,0,0,0) 30%,rgba(0,0,0,0.5));
+    }
+    .profile{
+        width: 100vw;
+        height: 50vh;
+        top: 0;
+        left: -100%;
+    }
+    .nav-links{
+        width: 100vw;
+        height: 50vh;
+        overflow: hidden;
+        top: 50vh;
+        left: 0;
+    }
+}
